@@ -43,15 +43,17 @@
              String[] val = new String[3];
              int j = 0;
              
-             for (int i = 0; i < cookies.length; i++) { 
-                Cookie c = cookies[i];
-                if (j < 3 && (c.getName().equals("quantity1") || c.getName().equals("quantity2") || c.getName().equals("quantity3"))) {
-                    val[j]=c.getValue();
-                    foundCookie = true;
-                    j++;
+             if (cookies != null){ 
+             
+                for (int i = 0; i < cookies.length; i++) { 
+                    Cookie c = cookies[i];
+                    if (j < 3 && (c.getName().equals("quantity1") || c.getName().equals("quantity2") || c.getName().equals("quantity3"))) {
+                        val[j]=c.getValue();
+                        foundCookie = true;
+                        j++;
+                     }
                 }
-             }  
-
+             }              
              if (!foundCookie) {
                 for (int i=0; i<3; i++){
                     val[i]="0";
